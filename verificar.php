@@ -7,7 +7,7 @@ $usuario=mysql_real_escape_string(stripslashes($_POST['usuario']));
 $pwd=mysql_real_escape_string(stripslashes($_POST['pwd']));
 if(isset($usuario) && empty($usuario))
 {
-	$mensaje="Escriba un usuario";
+	$mensaje="Escriba un nombre usuario";
 	header("location:login.php?msg=$mensaje");
 	die();
 }
@@ -17,7 +17,7 @@ if(isset($pwd) && empty($pwd))
 	header("location:login.php?msg=$mensaje");
 	die();
 }
-$data=mysql_query("SELECT id FROM cliente where User='$usuario' and Contrasenia='$pwd'");
+$data=mysql_query("SELECT id FROM usuario where user='$usuario' and password='$pwd'");
 $r=mysql_fetch_array($data);
 	if(mysql_num_rows($data) >0){
 		$_SESSION['session']=true;
