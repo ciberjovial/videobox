@@ -1,0 +1,530 @@
+/* top elements */
+* { padding: 0; margin: 0; border: 1; }
+
+body {
+	margin: 0; 	padding: 0;
+	font: normal 11px/1.2em  verdana, tahoma, sans-serif;	 
+	text-align: center;
+	background: #E4E4E4 url(headerbg.jpg) repeat-x 0 0;
+	color: #000;
+}
+
+/* links */
+a {
+	color: #003366;
+	background-color: inherit;
+	text-decoration: none;		
+}
+a:hover {
+	color: #FAA34B; 
+	background-color: inherit;
+	text-decoration: underline;	
+	border: none;
+}
+
+/* headers */
+h1, h2, h3 {
+	font: 1em 'Trebuchet MS', Tahoma, Arial, Sans-serif;
+	color: #000;
+}
+h1 { font-size: 2.5em; } 
+h2 { font-size: 2em; text-transform:uppercase;}
+h3 { font-size: 1.5em }
+
+p, h1, h2, h3 {
+	margin: 0;
+	padding: 10px 15px;
+}
+
+ul, ol {
+	margin: 10px 30px;
+	padding: 0 15px;	
+}
+
+/* images */
+img {
+   border: 0px solid #0F7ACC;
+	padding: 0px;
+}
+img.float-right {
+   margin: .5em 0 1em 1em;   
+}
+img.float-left {
+   margin: .5em 1em 1em 0;
+}
+
+code {
+  margin: .5em 0;
+  display: block;
+  padding: 20px;
+  text-align: left; 
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'Courier New', monospace ;
+  /* white-space: pre; */
+  background: #1E89DC;
+  border: 1px solid #0065C6;   
+}
+acronym {
+  cursor: help;
+  border-bottom: 1px solid #0065C6;
+}
+blockquote {
+	margin: 10px 15px;
+ 	padding: 10px 0 10px 28px;  
+   border: 1px solid #E2C822;
+	background: #FFF9D7; 
+}
+
+/* start - mitabla*/
+.mitabla {
+	margin: 10px 15px; 
+	//border-collapse: collapse;			
+}
+.mitabla th strong {
+	color: #fff;
+}
+.mitabla th {
+	background: #93BC0C;
+	height: 2.5em;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: #FFF;
+	text-align: left;
+	border-left: 1px solid #B6D59A;
+	border-bottom: solid 2px #8EB200; 
+	border-top: solid 2px #8EB200;
+}
+.mitabla tr {
+	/*color:#424242;*/
+	height: 2em;
+
+}
+.mitabla td {
+	padding-left: 12px;
+	padding-right: 12px;
+	border-left: 0px solid #FFF;
+	border-bottom: solid 0px #ffffff;
+}
+.mitabla td.first,th.first {
+	border-left: 0px;
+}
+
+
+/* table */
+.mtable {
+	margin: 10px auto; 
+	border-collapse: collapse;			
+}
+.mtable th strong {
+	color: #fff;
+}
+.mtable th {
+	background: #24a9d6;
+	height: 2.5em;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: #FFF;
+	text-align: left;
+	border-left: 1px solid #75c5f0;
+	border-bottom: solid 2px #0076bf; 
+	border-top: solid 2px #0076bf;
+}
+.mtable tr {
+	/*color:#424242;*/
+	background: #F8F8F8;
+	height: 2em;
+	border-bottom: 1px solid #CCCCCC;	
+}
+.mtable tr:hover {
+background-color: #D3F7CA;
+}
+.mtable td {
+	padding-left: 12px;
+	padding-right: 12px;
+	border-left: 0px solid #FFF;
+	border-bottom: solid 0px #ffffff;
+}
+.mtable td.first,th.first {
+	border-left: 0px;
+}
+.mtable tr.row-a {
+	background: #F8F8F8;
+}
+.mtable tr.row-b {
+	background: #EFEFEF;
+}
+/* end - table */
+
+/* form elements */
+form {
+	margin: 10px 15px; 
+	padding: 10px;
+	border: 1px solid #CCC; 
+	background-color: #F9F9F9; 
+}
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+	
+}
+label {
+	display:block;
+	
+	margin: .4em 0;	
+	color: #000;
+	text-align: right;
+}
+input {
+	padding: .3em;
+	border: 1px solid #CCC;
+	font: normal 1em Verdana, sans-serif;
+	color:#777;
+}
+textarea {
+	width: 100%;
+	padding: .3em;
+	font: normal 1em/1.5em Verdana, sans-serif;
+	border: 1px solid #ccc;
+	height: 10em;
+	display:block;
+	color:#777;
+}
+input.button { 
+	font: bold 1em Arial, Sans-serif; 
+	margin: 0;
+	padding: .25em .3em;
+	color: #000;
+	background: -moz-linear-gradient(center bottom , #ddd, #f2f2f2) repeat scroll 0 0 transparent;
+	border: 1px solid #000;
+}
+
+/* search form */
+.searchform {
+	background-color: transparent;
+	border: none;	
+	margin: 0 0 0 10px; padding: 0 0 1.5em 0;	
+	width: 18em;	
+}
+.searchform p { margin: 0; padding: 0; }
+.searchform input.textbox { 
+	width: 11em;
+	color: #777; 
+	padding: .4em; 
+	border: 1px solid #E5E5E5;
+	vertical-align: top;
+}
+.searchform input.button { 
+	width: 60px;
+	vertical-align: top;
+}
+
+/***********************
+	  LAYOUT
+************************/
+
+#header-content, #content, #nav {
+/*
+The width value below sets the total width of the design. It's default value is set to 93%
+which means that it will take up 93% of the browser window's width. You can also set it to a 
+different percentage	value (90%, 85%, etc.). This design is fluid layout by default, but you
+can turn it into a fixed width layout by setting a pixel value to the width (e.g. 900px, 950px).
+*/
+	width: 93%;	
+}
+
+/* box */
+.box {
+	margin: 10px 0;	
+	padding: 10px 10px 20px 10px;		
+	border: 1px solid #C6C6C6;
+	background: -moz-linear-gradient(center bottom ,#F2F2F2, #fff) repeat scroll 0 0 transparent;;		
+}
+
+/* header */
+#header {
+	height: 95px;
+	text-align: left;	
+}
+#header-content {
+	position: relative;
+	margin: 0 auto; padding: 0;
+}
+#header-content h1#logo-text a {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bold 45px 'Calibri', Tahoma, Arial, Sans-serif;
+	letter-spacing: -1px;
+	color: #6E6E6E;
+	text-decoration: none;
+	
+	/* change the values of top and left to adjust the position of the logo*/
+	top: 30px; left: 95px;	
+}
+#header-content h1#logo-text span {
+	color: #68B5F0;	
+}
+#header-content #slogan {
+	position: absolute;	
+	font: bold 16px 'Trebuchet Ms', Sans-serif;
+	text-transform: none;
+	color: #000;
+	letter-spacing: -0.5px;	
+		
+	margin: 0; padding: 0;
+	
+	/* change the values of left and top to adjust the position of the slogan */
+	top: 60px; right: 20px;
+}
+
+/* header links */
+#header-content #header-links {
+	position: absolute;
+	top: 25px; right: 10px;	
+	color: #0F7ACC;
+	font: bold 15px "Trebuchet MS", Tahoma, Sans-serif;	
+}
+#header-content #header-links a {	
+	color:#0F7ACC;
+	text-decoration: none;	
+}
+#header-content #header-links a:hover {
+	color: #000;		
+}
+
+
+/* Navigation */
+#nav-wrap {
+	float: left;
+	width: 100%;
+	background: url(menubg.jpg) repeat-x left bottom; 
+	clear: both;
+}
+#nav {
+	clear: both;	
+	margin: 0 auto;
+	padding: 0;		
+}
+#nav ul {
+	float: left;
+	list-style: none;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;	
+	height: 64px;		
+}
+#nav ul li {
+	float: left;
+	margin: 0; padding: 0;
+	height: 64px;
+}
+#nav ul li a {
+	display: block;
+	float: left;
+	width: auto;
+	margin: 0;
+	padding: 5px 15px;
+	color: #FFF;
+	font: bold 15px "Calibri", "Trebuchet MS", Helvetica, Arial, Geneva, sans-serif;
+	text-decoration: none;	
+	letter-spacing: 0px;	
+}
+#nav ul li a:hover, 
+#nav ul li a:active {
+	color: #333;	
+}
+#nav ul li#current {	
+	background: url(nav-current.jpg) no-repeat center bottom;		
+}
+#nav ul li#current a {
+	color: #333;
+}
+
+/* content */
+#content-wrap {
+	clear: both;
+	float: left;
+	background: #FFFFFF;		
+	width: 100%;
+}
+#content {
+	text-align: left;	
+	padding: 0; 
+	margin: 0 auto;		
+}
+
+/* sidebar */
+#sidebar {
+	float: right;
+	width: 21em;
+	margin: 10px 0 10px -21em; padding: 0;		
+}
+#sidebar h1 {
+	font: bold 1.5em 'Trebuchet MS', Tahoma, Arial, Sans-serif;
+	padding: .3em 0 .5em 10px; 
+	color: #6E6E6E;	
+}
+#sidebar ul.sidemenu {
+	list-style:none;
+	margin: 0;
+	padding: .3em 0 1em 5px;		
+	font-family: 'Trebuchet MS', Tahoma, Sans-serif;		
+}
+#sidebar ul.sidemenu li {
+	padding: 0; 
+	background: url(sidebullet.gif) no-repeat .3em .5em;		
+}
+
+* html body #sidebar ul.sidemenu li { height: 1%; }
+
+#sidebar ul.sidemenu li a {
+	display: block;
+	font-weight: bold;
+	color: #A4A4A4;	
+	text-decoration: none;
+	padding: .2em 0 0em 30px;
+	line-height: 1.5em;
+	font-size: 1.1em;
+}
+#sidebar ul.sidemenu li a:hover {
+	background: #0F7ACC url(sidebullet.gif) no-repeat .25em .45em;	
+	color: #FFF;			
+}
+#sidebar ul.sidemenu ul{
+	margin-left: 15px;
+}
+
+#sidebar .sidebox {
+	margin: 5px 15px 5px 0;
+	padding: 0;
+	background: url(sidebarsep.jpg) repeat-x left bottom;
+}
+#sidebar .sep{
+	background: url(sidebarsep.jpg) repeat-x left bottom;
+	height: 2px;
+	margin: 0px 15px 10px 0;
+	clear: both;
+}
+
+/* main */
+#main {
+	margin: 10px 23em 10px 0; 
+	padding: 0;		
+}
+#main h1 { 
+	font: bold 2.8em 'Trebuchet MS', Arial, Sans-serif;
+	color: #B1E100;
+	letter-spacing: -2px;		
+	padding-bottom: 0;	
+}
+#main h1 a {
+	color: #B1E100;
+	text-decoration: none;
+}
+
+/* footer */
+#footer-wrap {
+top: 60px;
+	clear: both;
+	border-top: 1px solid #E6E6E6;
+	text-align: left;
+	margin: 0;
+	padding: 0.5em 0;	
+}
+#footer-wrap a {
+	text-decoration: none;
+	color: #5B9CFF;
+	font-weight: bold;
+}
+#footer-wrap a:hover {
+	color: #E8F4FF;	
+}
+#footer-wrap p {
+	padding: 0px 0;
+}
+#footer-wrap h2 {
+	color: #E8F4FF;
+	margin: 0;
+	padding: 0 10px; 
+	text-transform: none;
+}
+
+/* footer columns */
+#footer-columns {
+	color: #5B9CFF;
+	margin: 0 auto; 
+	padding: 0;	
+	width: 90%;	
+}
+#footer-columns ul {
+	list-style: none;
+	margin: 10px 0 0 0; 
+	padding: 0;	
+	background: url(footer-dots.jpg) repeat-x left top;	
+}
+#footer-columns li {
+	background: url(footer-dots.jpg) repeat-x left bottom;		
+}
+#footer-columns li a {
+	display: block;
+	font-weight: normal;
+	padding: .5em 0 .5em 1em;
+	width: 96%;
+}
+#footer-columns .col3, .col3-center {
+	float: left;
+	width: 32%;
+}
+#footer-columns .col3-center { 
+	margin: 0 15px; 
+}
+
+/* bottom */
+#footer-bottom {
+	clear: both;
+	color: #464646;	
+	margin: 0 auto; 
+	padding: 0em 0;
+	text-align: center;
+}
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+
+/* additional classes */
+.clear { clear: both; }
+.white {	color: #E8F4FF; }
+
+img.rssfeed {
+	border: none; 
+	padding: 0 0 5px 0;
+	background: transparent;
+}
+
+.post-by {
+	font-size: .95em;	
+	padding-top: 0;
+}
+.post-footer { 
+	text-align: right; 
+	background: #1E89DC;
+	border: 1px solid #0065C6; 
+	padding: 8px 10px;
+	margin: 20px 15px 10px 15px;
+}
+.post-footer .date {
+	background: url(clock.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 3px 0 3px;
+}
+.post-footer .comments {
+	background: url(comment.gif) no-repeat left center;
+	padding-left: 	20px; margin: 0 3px 0 3px;
+	color: #FFFFFF
+}
+.post-footer .readmore {
+	background: url(page.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 3px 0 3px;
+}
