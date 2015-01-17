@@ -6,5 +6,11 @@ oihñououñ
 pollp
 =======
 jhklhlk
+<<<<<<< HEAD
 Esta es un modificacion realizada por MANUEL
 >>>>>>> origin/master
+=======
+Esta es un modificacion  por MANUEL
+
+esta modificion es realizada por porfirio
+>>>>>>> 922802e2c19098a5dd75802a2b723af97ad512f3
