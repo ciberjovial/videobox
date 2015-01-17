@@ -46,9 +46,9 @@ while ($r = mysql_fetch_assoc($consulta)) {
 	
 ?>
 <form id="form1" name="form1" method="post" action="">
-  <table width="594" border="1">
+  <table width="594" border="0">
     <tr>
-      <td width="88" rowspan="3"><img src="css/boxbg.jpg" alt="" width="60" height="60" /></td>
+      <td width="88" rowspan="3"><img src="css/boxbg.jpg" alt="" width="50" height="46" /></td>
       <td width="405">Titulo:<?php echo $r['titulo']; ?></td>
     </tr>
     <tr>
