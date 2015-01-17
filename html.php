@@ -89,7 +89,7 @@ function footer()
 </html>
 <?php
 }
-function mensaje($mensaje="<p>Ingrese sus Nombre de Usuario y Contraseña Por favor <b><a href=\"../index.php\">Regresar a la Portada</a></b></p>")
+function mensaje($mensaje="<p>Ingrese sus Nombre de Usuario y Contraseï¿½a Por favor <b><a href=\"../index.php\">Regresar a la Portada</a></b></p>")
 {
    	echo $mensaje;
 } 
