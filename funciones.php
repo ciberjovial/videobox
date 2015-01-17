@@ -100,32 +100,6 @@ else{
 }
 }
 
-//jimmy - registra los datos de perfil de cliente
-function ingreso_perfil(){
-	
-if(!isset($_SESSION['usuario'])){
-	blockquote("error","Ingrese a su sesion");
-	
-	exit();
- } else {
-	conectar();
-
-	if(!empty($_GET['dni'])){
-		$dni=$_GET['dni'];
-	$direccion=$_GET['direccion'];
-	$telefono=$_GET['telefono'];
-	$acercade=$_GET['acercade']; 
-	$idclie = $_GET['idclie']; 
-	
-	mysql_query("UPDATE cliente SET dni='$dni',direccion='$direccion',telefono='$telefono',acercade='$acercade'  WHERE id='".$idclie."'")or die("<b>ERROR#1. El servidor dijo: </b> " . mysql_error());
-	blockquote("ok","Se actualizaron los datos del cliente");
-	} else {
-				blockquote("alert","Ingrese como ".htmlentities("mínimo", ENT_QUOTES,'UTF-8')." su DNI");
-		}
-	}
-}
-
-
 function blockquote($est,$msj)
 			{
 				switch ($est) {
