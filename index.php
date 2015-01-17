@@ -31,9 +31,42 @@ else
 </div>
 </center>
 <div class="box">
-<h3>Lista Inicial</h3>   <br />
+<h3>Lista Inicial</h3>   
+<p><br />
+  <?
 conectar();
+$consulta=mysql_query("SELECT id, titulo, sinopsis from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 
+
+?>
+</p>
+
+<?
+while ($r = mysql_fetch_assoc($consulta)) {
+	
+?>
+<form id="form1" name="form1" method="post" action="">
+  <table width="594" border="1">
+    <tr>
+      <td width="88" rowspan="3"><img src="css/boxbg.jpg" alt="" width="60" height="60" /></td>
+      <td width="405">Titulo:<?php echo $r['titulo']; ?></td>
+    </tr>
+    <tr>
+      <td><p>Sinopsis:</p>
+        <p>&nbsp;</p>
+        <?php echo $r['sinopsis']; ?>
+        </td>
+    </tr>
+    <tr>
+      <td><input type="submit" name="verdetalle" id="verdetalle" value="Ver Detalle >>" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <?
+  }
+  ?>
+</form>
+<p>&nbsp; </p>
 <center><img src="css/colabora.jpg" /></center></div>
 </div>
 </div>
