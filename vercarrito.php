@@ -109,7 +109,7 @@ Elija el Tipo de Pago:<br />
 </form>
  
 <?php }else{ ?>
-<p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="catalogo.php?<?php echo SID;?>"><img src="continuar.gif" width="13" height="13" border="0"></a> 
+<p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="index.php?<?php echo SID;?>"><br><img src="css/icon/continuar.gif" width="13" height="13" border="0"></a> 
   <?php }?>
 </p>
 

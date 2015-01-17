@@ -15,6 +15,8 @@ conectar();
 			<?php ingreso_user();
 $consulta=mysql_query("select Id from usuario order by Id desc limit 0,1")or die("<b>ERROR. El servidor dijo: </b> " . mysql_error());
 $r=mysql_fetch_array($consulta);
+$consulta=mysql_query("select Id from cliente order by Id desc limit 0,1")or die("<b>ERROR. El servidor dijo: </b> " . mysql_error());
+$s=mysql_fetch_array($consulta);
  ?>
 <form  action="registro.php" method="get" enctype="multipart/form-data">
 <table class="mitabla">
@@ -44,6 +46,8 @@ $r=mysql_fetch_array($consulta);
   </tr>
   <input name="tipouser" type="hidden" value="1">
   <input name="statuser" type="hidden" value="1">
+  <input name="idclie" type="hidden" value="<? echo($r[0])+1;?>"/>
+  
 </table>
  
 	<tr><br/>

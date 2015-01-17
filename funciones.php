@@ -81,8 +81,10 @@ if(!empty($_GET['username']) && !empty($_GET['passuser'])
 	$mailuser=$_GET['mailuser'];
 	$tipouser=$_GET['tipouser'];
 	$statuser=$_GET['statuser'];
+	$idclie=$_GET['idclie'];
 
-	mysql_query("insert into usuario values ('$iduser','$tipouser','$nombuser','$apeluser','$username','$passuser','$mailuser','$statuser','')")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+	mysql_query("insert into usuario values ('$iduser','$tipouser','$nombuser','$apeluser','$username','$passuser','$mailuser','$statuser','')")or die("<b>ERROR#1. El servidor dijo: </b> " . mysql_error());
+	mysql_query("insert into cliente values ('$idclie','$iduser',' ','','','')")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
 	blockquote("ok","Se inserto el nuevo Usuario <b>$usedoc</b> correctamente</b>");
 }
 else{
