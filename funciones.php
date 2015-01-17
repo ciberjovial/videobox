@@ -66,11 +66,10 @@ function validar_email($correo){
     return false;
 }
 
-
 #-----------------------------------------
-#Realizar el nuevo ingreso de un doctor
+#Realizar el nuevo ingreso de un cliente
 #-----------------------------------------
-function ingreso_doctor(){
+function ingreso_user(){
 conectar();
 if(!empty($_GET['nomdoc']) && !empty($_GET['condoc']) 
 		  ){
@@ -86,13 +85,37 @@ if(!empty($_GET['nomdoc']) && !empty($_GET['condoc'])
 	$usedoc=$_GET['usedoc'];
 
 	mysql_query("insert into cliente values ('$codemp','$nomdoc','$apedoc','$cordoc','$paidoc','$prodoc','$dirdoc','$celdoc','$condoc','$usedoc')")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
-	echo "Se inserto el nuevo Usuario <b>$usedoc</b> correctamente";
+	blockquote("ok","Se inserto el nuevo Usuario <b>$usedoc</b> correctamente</b>");
 }
 else{
-	echo "Ingrese sus datos CORRECTAMENTE";
+	if(empty($_GET['codemp']))
+		{
+			blockquote("alert","Ingrese todos sus datos porfavor");
+		}
+		else
+		{
+			blockquote("error","Ingrese sus datos correctamente");				
+		}
+	
 }
 }
 
+function blockquote($est,$msj)
+			{
+				switch ($est) {
+				  case 'alert':
+					 echo "<blockquote><p><img style='margin-right: 10px; float:left;' src='css/icon/alert.gif' /> ".$msj."</p></blockquote>";
+					 break;
+				  case 'error':
+					echo "<blockquote class='blockquote_error'><p><img style='margin-right: 10px; float:left;' src='css/icon/error.png' /> ".$msj."</p></blockquote>";
+					break;
+				  case 'ok':
+					echo "<blockquote class='blockquote_ok'><p><img style='margin-right: 10px; float:left;' src='css/icon/ok.gif' /> ".$msj."</p></blockquote>";
+					break;
+				  default:
+					echo "No se que es ".$est;
+				} 
+			}
 #------------------------
 #Fin - Funciones
 #------------------------
