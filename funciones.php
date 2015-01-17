@@ -104,7 +104,7 @@ else{
 function ingreso_perfil(){
 	
 if(!isset($_SESSION['usuario'])){
-	blockquote("error","Ingrese a su sesion");
+	blockquote("error","Es necesario que <b><a href=\"login.php\">Inicie Sesion</a></b> o <b><a href=\"index.php\">Regrese al Inicio</a></b>");
 	
 	exit();
  } else {
@@ -120,7 +120,7 @@ if(!isset($_SESSION['usuario'])){
 	mysql_query("UPDATE cliente SET dni='$dni',direccion='$direccion',telefono='$telefono',acercade='$acercade'  WHERE id='".$idclie."'")or die("<b>ERROR#1. El servidor dijo: </b> " . mysql_error());
 	blockquote("ok","Se actualizaron los datos del cliente");
 	} else {
-				blockquote("alert","Ingrese como ".htmlentities("mínimo", ENT_QUOTES,'UTF-8')." su DNI");
+				blockquote("alert","Actualice todos sus datos");
 		}
 	}
 }

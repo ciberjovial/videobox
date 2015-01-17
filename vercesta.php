@@ -109,7 +109,7 @@ Elija el Tipo de Pago:<br />
 </form>
  
 <?php }else{ ?>
-<p align="center"> <span class="prod">No hay productos seleccionados</span> <a href="index.php?<?php echo SID;?>"><br><img src="css/icon/continuar.gif" width="13" height="13" border="0"></a> 
+<p align="center"> <span align="center"><b>Su cesta está vacia</b></span><br /><br /> <span align="center">No hay peliculas seleccionadas</span><br /><a href="index.php?<?php echo SID;?>"><br><img src="css/icon/continuar.gif" width="13" height="13" border="0"></a> 
   <?php }?>
 </p>
 
