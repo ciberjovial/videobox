@@ -41,7 +41,8 @@ $r=mysql_fetch_array($consulta);
 <form name="form1" method="post" action="">
   <table width="919" border="0" cellpadding="5" cellspacing="10">
     <tr>
-      <td width="107" rowspan="10"><img src="css/boxbg.jpg" alt="" width="60" height="60"></td>
+      //<td width="107" rowspan="10"><img src="img/pelicula/<?php echo $r['imagen'];?>" alt="" width="118" height="140" /></td>
+      
       <td width="178">Titulo <?php echo htmlentities("Español", ENT_QUOTES,'UTF-8'); ?> </td>
       <td width="281"><?php echo $r[0]; ?></td>
     </tr>
