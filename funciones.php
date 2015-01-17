@@ -67,34 +67,32 @@ function validar_email($correo){
 }
 
 #-----------------------------------------
-#Realizar el nuevo ingreso de un cliente
+# Realizar el nuevo ingreso de un cliente
 #-----------------------------------------
 function ingreso_user(){
 conectar();
-if(!empty($_GET['nomdoc']) && !empty($_GET['condoc']) 
+if(!empty($_GET['username']) && !empty($_GET['passuser']) 
 		  ){
-	$codemp=$_GET['codemp'];
-	$nomdoc=$_GET['nomdoc'];
-	$apedoc=$_GET['apedoc'];
-	$celdoc=$_GET['celdoc'];
-	$cordoc=$_GET['cordoc'];
-	$condoc=$_GET['condoc'];
-	$paidoc=$_GET['paidoc'];
-	$prodoc=$_GET['prodoc'];
-	$dirdoc=$_GET['dirdoc'];
-	$usedoc=$_GET['usedoc'];
+	$iduser=$_GET['iduser'];
+	$username=$_GET['username'];
+	$passuser=$_GET['passuser'];
+	$nombuser=$_GET['nombuser'];
+	$apeluser=$_GET['apeluser'];
+	$mailuser=$_GET['mailuser'];
+	$tipouser=$_GET['tipouser'];
+	$statuser=$_GET['statuser'];
 
-	mysql_query("insert into cliente values ('$codemp','$nomdoc','$apedoc','$cordoc','$paidoc','$prodoc','$dirdoc','$celdoc','$condoc','$usedoc')")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+	mysql_query("insert into usuario values ('$iduser','$tipouser','$nombuser','$apeluser','$username','$passuser','$mailuser','$statuser','')")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 	blockquote("ok","Se inserto el nuevo Usuario <b>$usedoc</b> correctamente</b>");
 }
 else{
-	if(empty($_GET['codemp']))
+	if(empty($_GET['iduser']))
 		{
 			blockquote("alert","Ingrese todos sus datos porfavor");
 		}
 		else
 		{
-			blockquote("error","Ingrese sus datos correctamente");				
+			blockquote("error","Ingrese como mínimo su usuario y contraseña");				
 		}
 	
 }

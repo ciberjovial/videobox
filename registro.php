@@ -13,7 +13,7 @@ conectar();
 <div class="box"> 
 
 			<?php ingreso_user();
-$consulta=mysql_query("select Id from cliente order by Id desc limit 0,1")or die("<b>ERROR. El servidor dijo: </b> " . mysql_error());
+$consulta=mysql_query("select Id from usuario order by Id desc limit 0,1")or die("<b>ERROR. El servidor dijo: </b> " . mysql_error());
 $r=mysql_fetch_array($consulta);
  ?>
 <form  action="registro.php" method="get" enctype="multipart/form-data">
@@ -42,6 +42,8 @@ $r=mysql_fetch_array($consulta);
 	<td><label>Correo electrónico</label></td>
 	<td><input  name="mailuser" type="text" size="35" value="@hotmail.com"/></td>
   </tr>
+  <input name="tipouser" type="hidden" value="1">
+  <input name="statuser" type="hidden" value="1">
 </table>
  
 	<tr><br/>
