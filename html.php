@@ -8,7 +8,7 @@ function head($estilo="estilo.css")
 <head>
 	<meta name="Description" content="Sistema." />
 	<meta name="Keywords" content="Sistema" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="Author" content="Hugo Barraza Vizcarra- manuel_brrz@hotmail.com" />
 	<link rel="stylesheet" href="css/<?php echo $estilo ?>" type="text/css" />
 	<title>VIDEOBOX</title>
@@ -89,7 +89,7 @@ function footer()
 </html>
 <?php
 }
-function mensaje($mensaje="<p>Ingrese sus Nombre de Usuario y Contraseña Por favor <b><a href=\"../index.php\">Regresar a la Portada</a></b></p>")
+function mensaje($mensaje="<p>Ingrese sus Nombre de Usuario y Contrase?a Por favor <b><a href=\"../index.php\">Regresar a la Portada</a></b></p>")
 {
    	echo $mensaje;
 } 

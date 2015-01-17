@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2015-01-17 01:50:04
+Date: 2015-01-17 04:17:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,12 +20,12 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `actor`;
 CREATE TABLE `actor` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
   `nombre` varchar(45) default NULL,
   `apellido` varchar(45) default NULL,
   `nacionalidad` varchar(45) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of actor
@@ -33,6 +33,27 @@ CREATE TABLE `actor` (
 INSERT INTO `actor` VALUES ('1', 'Stanley ', 'Tucci', null);
 INSERT INTO `actor` VALUES ('2', 'Ben ', 'Affleck', null);
 INSERT INTO `actor` VALUES ('3', 'Shailene ', 'Woodley', null);
+INSERT INTO `actor` VALUES ('4', 'Mark L. ', 'Walberg', null);
+INSERT INTO `actor` VALUES ('5', 'Nicola ', 'Peltz', null);
+INSERT INTO `actor` VALUES ('6', 'Kelsey ', 'Grammer', null);
+INSERT INTO `actor` VALUES ('7', 'Jack ', 'Reynor', null);
+INSERT INTO `actor` VALUES ('8', 'Titus ', 'Welliver', null);
+INSERT INTO `actor` VALUES ('9', 'Sophia ', 'Myles', null);
+INSERT INTO `actor` VALUES ('10', 'Bingbing ', 'Li ', null);
+INSERT INTO `actor` VALUES ('11', 'Justin ', 'Timberlake', null);
+INSERT INTO `actor` VALUES ('12', 'Gemma ', 'Artenton', null);
+INSERT INTO `actor` VALUES ('13', 'Anthony ', 'Mackie', null);
+INSERT INTO `actor` VALUES ('14', 'Sam ', 'Palladio', null);
+INSERT INTO `actor` VALUES ('15', 'Michael ', 'Esper', null);
+INSERT INTO `actor` VALUES ('16', 'Oliver ', 'Cooper', null);
+INSERT INTO `actor` VALUES ('17', ' Christian ', 'George ', null);
+INSERT INTO `actor` VALUES ('18', 'Ansel ', 'Elgort', null);
+INSERT INTO `actor` VALUES ('19', 'Laura ', 'Dern', null);
+INSERT INTO `actor` VALUES ('20', 'Sam ', 'Trammell', null);
+INSERT INTO `actor` VALUES ('21', 'Nat ', 'Wolff', null);
+INSERT INTO `actor` VALUES ('22', 'Willem ', 'Dafoe', null);
+INSERT INTO `actor` VALUES ('23', 'Lotte ', 'Verbeek', null);
+INSERT INTO `actor` VALUES ('24', 'Randy ', 'Kovitz ', null);
 
 -- ----------------------------
 -- Table structure for `amigos`
@@ -91,6 +112,47 @@ CREATE TABLE `detalle` (
 -- ----------------------------
 -- Records of detalle
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `detallepelicula`
+-- ----------------------------
+DROP TABLE IF EXISTS `detallepelicula`;
+CREATE TABLE `detallepelicula` (
+  `id` int(11) NOT NULL auto_increment,
+  `pelicula_id` int(11) NOT NULL,
+  `actor_id` int(11) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_detallepelicula_pelicula1_idx` (`pelicula_id`),
+  KEY `fk_detallepelicula_actor1_idx` (`actor_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of detallepelicula
+-- ----------------------------
+INSERT INTO `detallepelicula` VALUES ('1', '1', '1');
+INSERT INTO `detallepelicula` VALUES ('2', '1', '4');
+INSERT INTO `detallepelicula` VALUES ('3', '1', '5');
+INSERT INTO `detallepelicula` VALUES ('4', '1', '6');
+INSERT INTO `detallepelicula` VALUES ('5', '1', '7');
+INSERT INTO `detallepelicula` VALUES ('6', '1', '8');
+INSERT INTO `detallepelicula` VALUES ('7', '1', '9');
+INSERT INTO `detallepelicula` VALUES ('8', '1', '10');
+INSERT INTO `detallepelicula` VALUES ('9', '2', '2');
+INSERT INTO `detallepelicula` VALUES ('10', '2', '11');
+INSERT INTO `detallepelicula` VALUES ('11', '2', '12');
+INSERT INTO `detallepelicula` VALUES ('12', '2', '13');
+INSERT INTO `detallepelicula` VALUES ('13', '2', '14');
+INSERT INTO `detallepelicula` VALUES ('14', '2', '15');
+INSERT INTO `detallepelicula` VALUES ('15', '2', '16');
+INSERT INTO `detallepelicula` VALUES ('16', '2', '17');
+INSERT INTO `detallepelicula` VALUES ('17', '3', '3');
+INSERT INTO `detallepelicula` VALUES ('18', '3', '18');
+INSERT INTO `detallepelicula` VALUES ('19', '3', '19');
+INSERT INTO `detallepelicula` VALUES ('20', '3', '20');
+INSERT INTO `detallepelicula` VALUES ('21', '3', '21');
+INSERT INTO `detallepelicula` VALUES ('22', '3', '22');
+INSERT INTO `detallepelicula` VALUES ('23', '3', '23');
+INSERT INTO `detallepelicula` VALUES ('24', '3', '24');
 
 -- ----------------------------
 -- Table structure for `director`
@@ -181,21 +243,20 @@ CREATE TABLE `pelicula` (
   `caracteristica` longtext,
   `director_id` int(11) NOT NULL,
   `genero_id` int(11) NOT NULL,
-  `actor_id` int(11) NOT NULL,
   `imagen` varchar(45) default NULL,
   `ranking` int(11) default NULL,
+  `nivel` varchar(45) default NULL,
   PRIMARY KEY  (`id`),
   KEY `fk_pelicula_directorpelicula1_idx` (`director_id`),
-  KEY `fk_pelicula_generopelicula1_idx` (`genero_id`),
-  KEY `fk_pelicula_actoresreparto1_idx` (`actor_id`)
+  KEY `fk_pelicula_generopelicula1_idx` (`genero_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pelicula
 -- ----------------------------
-INSERT INTO `pelicula` VALUES ('1', 'TRANSFORMERS LA ERA DE LA EXTINCION (BLU RAY)', '2014', '165 mins ', 'USA', '40', '115.00', '110.00', 'Han pasado 4 años desde la tragedia de Chicago y la humanidad sigue reparando los destrozos, pero tanto los Autobots como los Decepticons han desaparecido de la faz de la Tierra. Ahora el Gobierno de los Estados Unidos está utilizando la tecnología rescatada en el asedio de Chicago para desarrollar sus propios Transformers.\r\n\r\nAl frente del proyecto está Joshua Joyce, un arrogante diseñador que piensa que los Autobots son \"basura tecnológica\" y se cree capaz de fabricar unos robots infinitamente más avanzados.\r\n\r\nMientras tanto, Cade Yeager, un mecánico inventor, encuentra un Marmon semi-trailer. Al intentar repararlo, descubre que el camión no solo era un Transformer, sino también el mismísimo Optimus Prime, líder de los Autobots. Lo que Cade ignora son las consecuencias que pueden derivarse de este hallazgo.', 'Presentacion widescreen', '1', '1', '1', null, null);
-INSERT INTO `pelicula` VALUES ('2', 'APUESTA MAXIMA (BLU RAY)', '2014', '91 mins ', 'USA', '10', '120.00', '115.00', 'Richie Furst es un estudiente de la universidad de Princeton que pierde el dinero que necesitaba para su matrícula al apostarlo en un juego de poker online.\r\n\r\nCuando descubre que el sitio web está alojado en una isla remota, va a enfrentar a su dueño, el millonario Ivan Block, pero termina convirtiendose en su discipulo y mano derecha.\r\n\r\nLa relación entre ambos alcanza el punto de ebullición mientras un agente del FBI intenta utilizar a Furst para detener a Block.', 'Escenas eliminadas', '2', '2', '2', null, null);
-INSERT INTO `pelicula` VALUES ('3', 'BAJO LA MISMA ESTRELLA', '2014', '126 mins ', 'USA', '23', '53.00', '41.00', 'A pesar de que un milagro médico ha conseguido reducir su tumor y darle unos años más de vida, Hazel siempre se ha considerado una enferma terminal.\r\n\r\nSin embargo, cuando Gus entra a formar parte del grupo de ayuda para enfermos de cáncer juvenil, la vida de Hazel se transforma por completo.', 'El elenco', '3', '3', '3', null, null);
+INSERT INTO `pelicula` VALUES ('1', 'TRANSFORMERS LA ERA DE LA EXTINCION (BLU RAY)', '2014', '165 mins ', 'USA', '40', '115.00', '110.00', 'Han pasado 4 años desde la tragedia de Chicago y la humanidad sigue reparando los destrozos, pero tanto los Autobots como los Decepticons han desaparecido de la faz de la Tierra. Ahora el Gobierno de los Estados Unidos está utilizando la tecnología rescatada en el asedio de Chicago para desarrollar sus propios Transformers.\r\n\r\nAl frente del proyecto está Joshua Joyce, un arrogante diseñador que piensa que los Autobots son \"basura tecnológica\" y se cree capaz de fabricar unos robots infinitamente más avanzados.\r\n\r\nMientras tanto, Cade Yeager, un mecánico inventor, encuentra un Marmon semi-trailer. Al intentar repararlo, descubre que el camión no solo era un Transformer, sino también el mismísimo Optimus Prime, líder de los Autobots. Lo que Cade ignora son las consecuencias que pueden derivarse de este hallazgo.', 'Presentacion widescreen', '1', '1', null, '4', 'R13');
+INSERT INTO `pelicula` VALUES ('2', 'APUESTA MAXIMA (BLU RAY)', '2014', '91 mins ', 'USA', '10', '120.00', '115.00', 'Richie Furst es un estudiente de la universidad de Princeton que pierde el dinero que necesitaba para su matrícula al apostarlo en un juego de poker online.\r\n\r\nCuando descubre que el sitio web está alojado en una isla remota, va a enfrentar a su dueño, el millonario Ivan Block, pero termina convirtiendose en su discipulo y mano derecha.\r\n\r\nLa relación entre ambos alcanza el punto de ebullición mientras un agente del FBI intenta utilizar a Furst para detener a Block.', 'Escenas eliminadas', '2', '2', null, '4', 'R13');
+INSERT INTO `pelicula` VALUES ('3', 'BAJO LA MISMA ESTRELLA', '2014', '126 mins ', 'USA', '23', '53.00', '41.00', 'A pesar de que un milagro médico ha conseguido reducir su tumor y darle unos años más de vida, Hazel siempre se ha considerado una enferma terminal.\r\n\r\nSin embargo, cuando Gus entra a formar parte del grupo de ayuda para enfermos de cáncer juvenil, la vida de Hazel se transforma por completo.', 'El elenco', '3', '3', null, '4', 'R13');
 
 -- ----------------------------
 -- Table structure for `usuario`

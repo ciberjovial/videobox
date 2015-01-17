@@ -89,7 +89,7 @@ $r=mysql_fetch_array($consulta);
       <td><?php echo respdisponible($r['stock']); ?></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
+      <td>Ver lista</td>
       <td>Precio</td>
       <td><?php echo $r['precioven']; ?></td>
     </tr>
