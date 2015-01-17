@@ -55,7 +55,7 @@ if($carro){
    $contador++;
   
     ?>
-  <form name="a<?php echo $v['identificador'] ?>" method="post" action="agregacar.php?<?php echo SID ?>" id="a<?php echo $v['identificador'] ?>">
+  <form name="a<?php echo $v['identificador'] ?>" method="post" action="agregarcesta.php?<?php echo SID ?>" id="a<?php echo $v['identificador'] ?>">
     <tr bgcolor="<?php echo $color[$contador%2]; ?>" class='prod'> 
 	<td><?php echo $v['id'] ?><?php $x[$j]=$v['id'];?></td>
 	

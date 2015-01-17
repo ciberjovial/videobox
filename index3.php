@@ -35,7 +35,7 @@ else
 <p><br />
   <?
 conectar();
-$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+$consulta=mysql_query("SELECT id, titulo, sinopsis from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 
 
 ?>
@@ -43,33 +43,29 @@ $consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die
 
 <?
 while ($r = mysql_fetch_assoc($consulta)) {
-	$idpelicula = $r['id'];
+	
 ?>
-<form action="detalle_pelicula.php" method="post" enctype="application/x-www-form-urlencoded" name="pelidet" target="_self" id="pelidet">
-  <table width="852" border="0" cellspacing="1">
+<form id="form1" name="form1" method="post" action="">
+  <table width="594" border="0">
     <tr>
-      <td width="184" rowspan="3"><img src="img/pelicula/<?php echo $r['imagen'];?>" alt="" width="118" height="140" /></td>
-      <td width="661">Titulo: <?php echo $r['titulo']; ?></td>
+      <td width="88" rowspan="3"><img src="videobox/img/pelicula/1.jpg" alt="" width="173" height="260" /></td>
+      <td width="405">Titulo:<?php echo $r['titulo']; ?></td>
     </tr>
     <tr>
       <td><p>Sinopsis:</p>
-        
+        <p>&nbsp;</p>
         <?php echo $r['sinopsis']; ?>
         </td>
     </tr>
     <tr>
-      <td align="right"><input type="submit" name="verdetalle" id="verdetalle" value="Ver Detalle &gt;&gt;" /></td>
+      <td><input type="submit" name="verdetalle" id="verdetalle" value="Ver Detalle >>" /></td>
     </tr>
   </table>
   <p>&nbsp;</p>
   <?
-  echo "<input type=\"hidden\" name=\"idpelicula\" value=" . $idpelicula . " />";
-   ?>
-</form>
-  <?
-   }
+  }
   ?>
-  
+</form>
 <p>&nbsp; </p>
 <center><img src="css/colabora.jpg" /></center></div>
 </div>

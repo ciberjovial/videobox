@@ -116,31 +116,6 @@ function blockquote($est,$msj)
 					echo "No se que es ".$est;
 				} 
 			}
-// jimmy -busca el nombre de genero de la pelicula
-function nombregenero ($idgenero){
-	conectar();
-	$consulta=mysql_query("SELECT nombre FROM genero WHERE id = '".$idgenero."'");
-	$r=mysql_fetch_array($consulta);
-	return $r[0];
-	}			
-
-// jimmy -busca el nombre de director de la pelicula
-function nombredirector ($iddirector){
-	conectar();
-	$consulta=mysql_query("SELECT nombre,apellido FROM director WHERE id = '".$iddirector."'");
-	$r=mysql_fetch_array($consulta);
-	return $r[0]." ".$r[1];
-	}		
-		
-	//jimmy - devuelve la respuesta si el stock de la pelicula se encuentra disponible
-function respdisponible ($stock){
-    if ($stock > 0){
-		$resp = "SI";
-		} else{
-			$resp = "NO";
-			}
-	return $resp;		
-}
 #------------------------
 #Fin - Funciones
 #------------------------
