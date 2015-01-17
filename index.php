@@ -31,7 +31,7 @@ else
 </div>
 </center>
 <div class="box">
-<h3>Nuestros auspiciadores</h3>   <br />
+<h3>Lista Inicial</h3>   <br />
 <center><img src="css/colabora.jpg" /></center></div>
 </div>
 </div>
