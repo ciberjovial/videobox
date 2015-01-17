@@ -1,5 +1,4 @@
 <?php
-//echo('hola1');
 function head($estilo="estilo.css")
 {
 ?>
@@ -29,7 +28,7 @@ function head($estilo="estilo.css")
 	  <li id="current"><a href="index.php"> INICIO</a></li>
       <li><a href="perfil.php"> Mi Perfil</a></li>
 	  <li><a href="sistema.php"> Nuestro sistema</a></li>
-	  <li><a href="vercesta.php"><img src="css/cesta.png" align="absmiddle"/> Mi pedido</a></li>
+	  <li><a href="vercesta.php"><img src="css/cesta.png" align="absmiddle"/> Mi cesta</a></li>
     </ul>
   </div>
 </div>

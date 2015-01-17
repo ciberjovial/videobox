@@ -37,5 +37,5 @@ $_SESSION['carro']=$carro;
 //Y volvemos a nuestro catálogo de artículos. La cadena SID representa al identificador de la sesión, que, dependiendo 
 //de la configuración del servidor y de si el usuario tiene o no activadas las cookies puede no ser necesario pasarla por la url.
 //Pero para que nuestro carro funcione, independientemente de esos factores, conviene escribirla siempre.
-header("Location:detalle_peli.php?".SID);
+header("Location:detalle_pelicula.php?".SID);
 ?>

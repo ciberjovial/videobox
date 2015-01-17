@@ -2,7 +2,9 @@
 include("funciones.php");
 include("html.php"); 
 head();
+menu();
 ?>
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
 <div id="main">	
 <div class="box">
 			<h3> Identifiquese</h3>

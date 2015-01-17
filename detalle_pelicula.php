@@ -1,10 +1,8 @@
 <?
 session_start(); 
 
-
 $user=strtoupper($_SESSION['usuario']);
 $idd=$_SESSION['codigo'];
-$add=$_GET['add'];
 
 include("funciones.php");
 include("html.php"); 
@@ -12,50 +10,57 @@ head();
 menu();
 
 ?>
-<link href="css/estilo_biblioteca.css" rel="stylesheet" type="text/css" />
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
 <div id="main">	
 <?php
 if(!isset($_SESSION['usuario']))
 {
-mensaje("Bienvenido INVITADO al Sistema. |<b><a href=\"login.php\"> 
-			 Iniciar Sesion</a></b> | <b><a href=\"registro.php\">Registrarse</a></b>");
+	mensaje("Bienvenido <b>INVITADO</b> al Sistema. | <b><a href=\"login.php\">Iniciar Sesion</a></b> | <b><a href=\"registro.php\">Registrarse</a></b>");
 }
 else
 {
-    mensaje("Bienvenido <b>$user</b> al Sistema. |<b><a href=\"cerrar.php\"> 
-			 Cerrar Sesion</a></b> | <b><a href=\index.php\">Regresar al Inicio</a></b> | ID:$idd");
+    mensaje("Bienvenido <b>$user</b> al Sistema. | <b><a href=\"cerrar.php\">Cerrar Sesion</a></b> | <b><a href=\index.php\">Regresar al Inicio</a></b> | ID:$idd");
 }
+ob_start("ob_gzhandler");
+
 ?>	
 <div class="box">
-<center><img src="css/banner.png" /></center>
-</div>
-</center>
-<div class="box">
+<form>
 <?php  
-$idpelicula  = $_POST['idpelicula'];
-conectar();
-$consulta=mysql_query("SELECT titulo, sinopsis , anio, duracion, stock, precioven, caracteristica, director_id, genero_id, imagen, ranking, nivel from pelicula WHERE id = '".$idpelicula."'")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
-$r=mysql_fetch_array($consulta);
+	$idpelicula  = $_GET['idpelicula'];
+	if(empty($_GET['idpelicula']))
+	{
+		$idpelicula=$_SESSION['peli'];
+	}
+	else
+	{
+		$_SESSION['peli']=$idpelicula;
+	}
+	
+	
+	conectar();
+	$consulta=mysql_query("SELECT titulo, sinopsis , anio, duracion, stock, precioven, caracteristica, director_id, genero_id, imagen, ranking, nivel from pelicula WHERE id = '".$idpelicula."'")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+	$r=mysql_fetch_array($consulta);
 ?>
-<h3>id: <?php echo $idpelicula; ?></h3>
-<form name="form1" method="post" action="">
-  <table width="919" border="0" cellpadding="5" cellspacing="10">
+<!-- <h3>id: <?php echo $idpelicula; ?></h3> -->
+
+  <table width="100%"  cellpadding="5" cellspacing="10" class="mtable">
     <tr>
-      //<td width="107" rowspan="10"><img src="img/pelicula/<?php echo $r['imagen'];?>" alt="" width="118" height="140" /></td>
+      <td width="150" align="center" rowspan="10"><img width="100%" height="100%" src="img/pelicula/<?php echo $r['imagen'];?>" alt="" width="118" height="140" /></td>
       
-      <td width="178">Titulo <?php echo htmlentities("Español", ENT_QUOTES,'UTF-8'); ?> </td>
-      <td width="281"><?php echo $r[0]; ?></td>
+      <td width="150"><b>Titulo <?php echo htmlentities("Español", ENT_QUOTES,'UTF-8'); ?> </b></td>
+      <td ><?php echo $r[0]; ?></td>
     </tr>
     <tr>
-      <td>Titulo Ingles </td>
+      <td><b>Titulo Ingles</b> </td>
       <td><?php echo $r['titulo']; ?></td>
     </tr>
     <tr>
-      <td>Genero</td>
+      <td><b>Genero</b></td>
       <td><?php echo nombregenero($r['genero_id']); ?></td>
     </tr>
     <tr>
-      <td>Actores</td>
+      <td><b>Actores</b></td>
       <td> 
       <?php  
 	  $consulta1 = mysql_query("SELECT detpel.actor_id, a.nombre,a.apellido from detallepelicula detpel, actor a WHERE detpel.actor_id = a.id and detpel.pelicula_id = '".$idpelicula."'")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
@@ -66,48 +71,64 @@ $r=mysql_fetch_array($consulta);
       </td>
     </tr>
     <tr>
-      <td>A&ntilde;o</td>
+      <td><b>A&ntilde;o</b></td>
       <td><?php echo $r['anio']; ?></td>
     </tr>
     <tr>
-      <td>Duraci&oacute;n</td>
+      <td><b>Duraci&oacute;n</b></td>
       <td><?php echo $r['duracion']; ?></td>
     </tr>
     <tr>
-      <td>Director</td>
+      <td><b>Director</b></td>
       <td><?php echo nombredirector($r['director_id']); ?></td>
     </tr>
     <tr>
-      <td>Productor</td>
+      <td><b>Productor</b></td>
       <td><?php echo nombredirector($r['director_id']); ?></td>
     </tr>
     <tr>
-      <td>Nivel</td>
+      <td><b>Nivel</b></td>
       <td><?php echo $r['nivel']; ?></td>
     </tr>
     <tr>
-      <td>Disponible</td>
+      <td><b>Disponible</b></td>
       <td><?php echo respdisponible($r['stock']); ?></td>
     </tr>
     <tr>
-      <td>Ver lista</td>
-      <td>Precio</td>
-      <td><?php echo $r['precioven']; ?></td>
+      <td align="center">
+	  <!-- AGREGAR O QUITAR DE LA CESTA -->
+	  
+	  <?php
+		conectar();
+		if(isset($_SESSION['carro']))
+		$carro=$_SESSION['carro'];else $carro=false;
+		if(!$carro || !isset($carro[md5($idpelicula)]['identificador']) || $carro[md5($idpelicula)]['identificador']!=md5($idpelicula)){
+		//si el producto no ha sido agregado, mostramos la imagen de no agregado, linkeada
+		// a nuestra página de agregar producto y transmitíéndole a dicha
+		//página el id del artículo y el identificador de la sesión
+		?><a href="agregarcesta.php?<?php echo SID ?>&id=<?php echo $idpelicula; ?>"><img src="css/productonoagregado.gif" border="0" title="(+)"> Agregar a la cesta</a><?php }
+		else
+		//en caso contrario mostramos la otra imagen linkeada., a la página que sirve para borrar el artículo del carro.
+		{?><a href="borrarcesta.php?<?php echo SID ?>&id=<?php echo $idpelicula; ?>"><img src="css/productoagregado.gif" border="0" title="(-)"> Quitar de la cesta</a><?php } ?>
+	    
+	  </td>
+      <td><b>Precio</b></td>
+      <td>S/. <?php echo $r['precioven']; ?></td>
     </tr>
     <tr>
-      <td rowspan="2">&nbsp;</td>
-      <td colspan="2"><p>Sinopsis</p>
-        <p><?php echo $r['sinopsis']; ?> </p></td>
+      <td> </td>
+      <td colspan="2" align="justify"><br /><b>Sinopsis</b></br> 
+        <?php echo $r['sinopsis']; ?> <br /><br />
+		</td>
     </tr>
     <tr>
-      <td height="25" colspan="2"><p>Car&aacute;cteristicas Especiales </p>
-        <p><?php echo $r['caracteristica']; ?></p></td>
+		<td> </td>
+      <td colspan="2" align="justify"><br /><b>Car&aacute;cteristicas Especiales</b><br />
+      <?php echo $r['caracteristica']; ?><br /><br />
+	  </td>
     </tr>
   </table>
 </form>
-<p>&nbsp; </p>
-<center><img src="css/colabora.jpg" /></center></div>
-</div>
 </div>
 <?php
 footer();

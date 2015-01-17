@@ -68,7 +68,7 @@ if($carro){
       <td width="136" align="center"> 
         <input name="cantidad" type="text" id="cantidad" value="<?php echo $v['cantidad'] ?>" size="8">
         <input name="id" type="hidden" id="id" value="<?php echo $v['id'] ?>"> </td>
-      <td align="center"><a href="borracar.php?<?php echo SID ?>&id=<?php echo $v['id'] ?>"><img src="css/borrar.gif" border="0"></a></td>
+      <td align="center"><a href="borrarcesta.php?<?php echo SID ?>&id=<?php echo $v['id'] ?>"><img src="css/borrar.gif" border="0"></a></td>
       <td align="center"> 
         <input name="imageField" type="image" src="css/refrescar.png" border="0"></td>
 
@@ -80,10 +80,10 @@ if($carro){
 
 <div align="center"><span class="prod">Total de Artículos: <?php echo count($carro); ?></span> 
 </div><br>
-<div align="center"><span class="prod">Total: $<?php echo number_format($suma,2); ?></span> 
+<div align="center"><span class="prod">Total: S/. <?php echo number_format($suma,2); ?></span> 
 </div><br>
 <div align="center"><span class="prod">Continuar la selección de productos</span> 
-  <a href="catalogo.php?<?php echo SID;?>"><img src="css/continuar.gif" border="0"></a> 
+  <a href="index.php?<?php echo SID;?>"><img src="css/icon/continuar.gif" border="0"></a> 
 </div>
 Elija el Tipo de Pago:<br />
 <table class="mitabla">

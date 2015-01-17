@@ -12,5 +12,5 @@ unset($carro[md5($id)]);
 //caso la usamos para borrar el elemento cuyo id le pasemos a la página por la url 
 $_SESSION['carro']=$carro;
 //Finalmente, actualizamos la sessión, como hicimos cuando agregamos un producto y volvemos al catálogo
-header("Location:detalle_peli.php?".SID);
+header("Location:detalle_pelicula.php?".SID);
 ?>

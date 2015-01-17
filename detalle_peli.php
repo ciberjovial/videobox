@@ -50,8 +50,6 @@ session_start();
 conectar();
 if(isset($_SESSION['carro']))
 $carro=$_SESSION['carro'];else $carro=false;
-
-
 	if(!$carro || !isset($carro[md5($idd)]['identificador']) || $carro[md5($idd)]['identificador']!=md5($idd)){
 	//si el producto no ha sido agregado, mostramos la imagen de no agregado, linkeada
 	// a nuestra página de agregar producto y transmitíéndole a dicha
