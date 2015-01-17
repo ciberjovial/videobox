@@ -32,6 +32,8 @@ else
 </center>
 <div class="box">
 <h3>Lista Inicial</h3>   <br />
+conectar();
+
 <center><img src="css/colabora.jpg" /></center></div>
 </div>
 </div>
