@@ -8,7 +8,7 @@ function head($estilo="estilo.css")
 <head>
 	<meta name="Description" content="Sistema." />
 	<meta name="Keywords" content="Sistema" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="Author" content="Hugo Barraza Vizcarra- manuel_brrz@hotmail.com" />
 	<link rel="stylesheet" href="css/<?php echo $estilo ?>" type="text/css" />
 	<title>VIDEOBOX</title>
