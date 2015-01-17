@@ -8,7 +8,7 @@ function head($estilo="estilo.css")
 <head>
 	<meta name="Description" content="Sistema." />
 	<meta name="Keywords" content="Sistema" />
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="Author" content="Hugo Barraza Vizcarra- manuel_brrz@hotmail.com" />
 	<link rel="stylesheet" href="css/<?php echo $estilo ?>" type="text/css" />
 	<title>VIDEOBOX</title>
@@ -27,9 +27,9 @@ function head($estilo="estilo.css")
   <div id="nav">
     <ul>
 	  <li id="current"><a href="index.php"> INICIO</a></li>
-      <li><a href="vehiculo.php"> Mi Perfil</a></li>
-	  <li><a href="catalogo.php"> Nuestro sistema</a></li>
-	  <li><a href="vercarrito.php"><img src="css/cesta.png" align="absmiddle"/> Mi pedido</a></li>
+      <li><a href="perfil.php"> Mi Perfil</a></li>
+	  <li><a href="sistema.php"> Nuestro sistema</a></li>
+	  <li><a href="vercesta.php"><img src="css/cesta.png" align="absmiddle"/> Mi pedido</a></li>
     </ul>
   </div>
 </div>
