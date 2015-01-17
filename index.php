@@ -12,7 +12,7 @@ head();
 menu();
 
 ?>
-<link href="css/estilo_biblioteca.css" rel="stylesheet" type="text/css" />
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
 <div id="main">	
 <?php
 if(!isset($_SESSION['usuario']))
@@ -27,7 +27,9 @@ else
 }
 ?>	
 <div class="box">
-<center><img src="css/banner.png" /></center>
+<center>
+  <img src="img/baner1.jpg" width="785" height="32" />
+</center>
 </div>
 </center>
 <div class="box">
@@ -35,7 +37,7 @@ else
 <p><br />
   <?
 conectar();
-$consulta=mysql_query("SELECT id, titulo, sinopsis from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 
 
 ?>
@@ -48,13 +50,13 @@ while ($r = mysql_fetch_assoc($consulta)) {
 <form id="form1" name="form1" method="post" action="">
   <table width="594" border="0">
     <tr>
-      <td width="88" rowspan="3"><img src="css/boxbg.jpg" alt="" width="50" height="46" /></td>
+      <td width="88" rowspan="3"> <img src="img/pelicula/<?php echo $r['imagen'];?>" alt="" width="118" height="140" /></td>
       <td width="405">Titulo:<?php echo $r['titulo']; ?></td>
     </tr>
     <tr>
       <td><p>Sinopsis:</p>
         <p>&nbsp;</p>
-        <?php echo $r['sinopsis']; ?>
+        <tr><td aling="justify"><?php echo $r['sinopsis']; ?></td></tr>
         </td>
     </tr>
     <tr>
