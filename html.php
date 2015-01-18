@@ -30,7 +30,7 @@ function head($estilo="estilo.css")
            if ($tipouser == 2) {
 		 ?>
 	  <li id="current"><a href="index.php"> INICIO</a></li>
- 
+      <li><a href="rptventa.php"> Ver Reporte</a></li>
          <?php 
 		   } else {
 			    ?>

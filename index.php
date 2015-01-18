@@ -29,7 +29,19 @@ else
 <div class="box">
 <?php
 if ($tipouser == 2) {  // si el tipo de usuario es cajero
-	
+	if ($_POST["optx"] == "savepedido"){
+		$idpedido = $_POST["idpedido"];
+		//echo $idpedido;
+		conectar();
+		if ($_POST[cerrarventa]) { 
+		    mysql_query("UPDATE pedido SET estado='1' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+		 }
+		 
+		if ($_POST[anulaventa]) { 
+		    mysql_query("UPDATE pedido SET estado='2' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+		 }		 
+		//mysql_query("UPDATE pedido SET estado='1' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+	}
 	conectar();
 		$consulta=mysql_query("SELECT id, cliente_id, empleado_id, fecha from pedido WHERE estado = 0")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 	?>	
