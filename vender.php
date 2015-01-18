@@ -67,7 +67,20 @@ while ($r = mysql_fetch_assoc($consulta)) {
 		echo "<input type=\"hidden\" name=\"optx\" value=\"savepedido\" />";
 		?>
 <tr align="right">
- <td colspan="6"> <input name="cerrarventa" type="submit" value="Cerrar Venta" id="cerrarventa"></td>
+ <td colspan="3"> <input name="cerrarventa" type="submit" value="Cerrar Venta" id="cerrarventa"></td>
+  <td colspan="3"> <input name="anulaventa" type="submit" value="Anular Venta" id="anulaventa"></td>
+</tr>		
+		<?php
+	}
+  ?>
+  <?php
+    if ($_POST["optx"] == "vispedido"){
+		
+				 echo "<input type=\"hidden\" name=\"idpedido\" value=" . $idpedido . " />";
+		echo "<input type=\"hidden\" name=\"optx\" value=\"savepedido\" />";
+		?>
+<tr align="right">
+ <td colspan="3"> <input name="anulaventa" type="submit" value="Anular Venta" id="anulaventa"></td>
 </tr>		
 		<?php
 	}
