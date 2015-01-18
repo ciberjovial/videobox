@@ -99,6 +99,13 @@ ob_start("ob_gzhandler");
 	  <!-- AGREGAR O QUITAR DE LA CESTA -->
 	  
 	  <?php
+		if(!isset($_SESSION['usuario']))
+	{
+		?>Para alquilar<br><b><a href=\"login.php\">Inicie Sesion</a></b>
+		<?
+	}
+	else
+	{
 		conectar();
 		if(isset($_SESSION['carro']))
 		$carro=$_SESSION['carro'];else $carro=false;
@@ -109,7 +116,8 @@ ob_start("ob_gzhandler");
 		?><a href="agregarcesta.php?<?php echo SID ?>&id=<?php echo $idpelicula; ?>"><img src="css/productonoagregado.gif" border="0" title="(+)"> Agregar a la cesta</a><?php }
 		else
 		//en caso contrario mostramos la otra imagen linkeada., a la página que sirve para borrar el artículo del carro.
-		{?><a href="borrarcesta.php?<?php echo SID ?>&id=<?php echo $idpelicula; ?>"><img src="css/productoagregado.gif" border="0" title="(-)"> Quitar de la cesta</a><?php } ?>
+		{?><a href="borrarcesta.php?<?php echo SID ?>&id=<?php echo $idpelicula; ?>"><img src="css/productoagregado.gif" border="0" title="(-)"> Quitar de la cesta</a><?php } 
+	} ?>
 	    
 	  </td>
       <td><b>Precio</b></td>
