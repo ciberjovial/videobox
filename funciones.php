@@ -167,6 +167,30 @@ function respdisponible ($stock){
 			}
 	return $resp;		
 }
+// jimmy -busca el nombre de cliente 
+function nombrecliente ($idcliente){
+	conectar();
+	$consulta=mysql_query("SELECT nombre,apellido FROM usuario WHERE id = '".$idcliente."' and tipo='1'");
+	$r=mysql_fetch_array($consulta);
+	return $r[0]." ".$r[1];
+	}
+	
+	
+  //jimmy - devuelve el precio de un numero de producto
+  function precioalq ($idproducto){
+	  conectar();
+	$consulta=mysql_query("SELECT precioalq FROM pelicula WHERE id = '".$idproducto."'");
+	$r=mysql_fetch_array($consulta);
+	return $r[0];
+  }
+  
+  // jimmy - calcula el importe de una venta
+    function importeb ($idpedido){
+			  conectar();
+	$consulta=mysql_query("SELECT SUM(cantidad * preciounitario) AS Bruto from detallepedido WHERE operacion_id = '".$idpedido."'");
+	$r=mysql_fetch_array($consulta);
+	return $r[0];
+	}
 #------------------------
 #Fin - Funciones
 #------------------------

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="logo.png" server="C:/AppServ/www/prot3/" local="130658645367898591" remote="130658645360000000" />
-<file name="funciones.php" server="C:/AppServ/www/prot3/" local="130659700990540028" remote="130659700990000000" />
-<file name="html.php" server="C:/AppServ/www/prot3/" local="130659620599331914" remote="130659620590000000" />
-<file name="index.php" server="C:/AppServ/www/prot3/" local="130659591421473036" remote="130659591420000000" />
-<file name="login.php" server="C:/AppServ/www/prot3/" local="130658645367868589" remote="130658645360000000" />
-<file name="comprar.php" server="C:/AppServ/www/prot3/" local="130658645366358503" remote="130658645360000000" />
-<file name="contacto.php" server="C:/AppServ/www/prot3/" local="130658645366398505" remote="130658645360000000" />
+<file name="funciones.php" server="C:/AppServ/www/prot3/" local="130660281092771439" remote="130660281090000000" />
+<file name="html.php" server="C:/AppServ/www/prot3/" local="130660232756396756" remote="130660232750000000" />
+<file name="index.php" server="C:/AppServ/www/prot3/" local="130660138902468619" remote="130660138900000000" />
+<file name="login.php" server="C:/AppServ/www/prot3/" local="130660138902478619" remote="130660138900000000" />
+<file name="comprar.php" server="C:/AppServ/www/prot3/" local="130660259056871057" remote="130660259050000000" />
 <file name="registro.php" server="C:/AppServ/www/prot3/" local="130659504036904924" remote="130659504030000000" />
-<file name="verificar.php" server="C:/AppServ/www/prot3/" local="130659420780912954" remote="130659420780000000" />
-<file name="perfil.php" server="C:/AppServ/www/prot3/" local="130659669685739496" remote="130659669680000000" />
+<file name="verificar.php" server="C:/AppServ/www/prot3/" local="130660233274066365" remote="130660233270000000" />
+<file name="perfil.php" server="C:/AppServ/www/prot3/" local="130660138902618627" remote="130660138900000000" />
+<file name="vercesta.php" server="C:/AppServ/www/prot3/" local="130660138902628628" remote="130660138900000000" />
+<file name="agregarcesta.php" server="C:/AppServ/www/prot3/" local="130660138902348612" remote="130660138900000000" />
+<file name="vender.php" server="C:/AppServ/www/prot3/" local="130660284130000000" remote="130660284130000000" />
+<file name="detalle_pelicula.php" server="C:/AppServ/www/prot3/" local="130660138902418616" remote="130660138900000000" />
 </dwsync>

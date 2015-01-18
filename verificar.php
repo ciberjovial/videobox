@@ -17,13 +17,17 @@ if(isset($pwd) && empty($pwd))
 	header("location:login.php?msg=$mensaje");
 	die();
 }
-$data=mysql_query("SELECT id FROM usuario where user='$usuario' and password='$pwd'");
+$data=mysql_query("SELECT id,tipo FROM usuario where user='$usuario' and password='$pwd'");
 $r=mysql_fetch_array($data);
 	if(mysql_num_rows($data) >0){
 		$_SESSION['session']=true;
 		$_SESSION['usuario']=$usuario;//datos correctos -> logeamos =)
 		$_SESSION['codigo']=($r[0]);
-		header("Location: index.php");}
+		$_SESSION['tipouser']=($r[1]);
+		//header("Location: index.php");
+		header("Location: index.php");
+		
+		}
 	else {
 		$mensaje="Los datos ingresados son incorrectos";
 		header("location:login.php?msg=$mensaje");

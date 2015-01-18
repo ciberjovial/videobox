@@ -1,6 +1,7 @@
 <?php
 function head($estilo="estilo.css")
 {
+	$tipouser = $_SESSION['tipouser'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,17 +19,28 @@ function head($estilo="estilo.css")
 	<h1 id="logo-text"><img src="logo.png"><br /><a href="index.php" title=""><span></span></a></h1>
     <h2 id="slogan">ALQUILER Y COMPRA DE VIDEOS</h2>
     <div id="header-links">
-      <p><a href="index.php">Inicio</a> | <a href="contacto.php">Contacto</a></p>
+<p><a href="index.php">Inicio</a> | <a href="contacto.php">Contacto</a></p>       
     </div>
   </div>
 </div>
 <div id="nav-wrap">
   <div id="nav">
     <ul>
+        <?php 
+           if ($tipouser == 2) {
+		 ?>
 	  <li id="current"><a href="index.php"> INICIO</a></li>
+ 
+         <?php 
+		   } else {
+			    ?>
+               	  <li id="current"><a href="index.php"> INICIO</a></li>
       <li><a href="perfil.php"> Mi Perfil</a></li>
 	  <li><a href="nosotros.php"> Nuestro sistema</a></li>
 	  <li><a href="vercesta.php"><img src="css/cesta.png" align="absmiddle"/> Mi cesta</a></li>
+          <?php  
+			   }
+		 ?>
     </ul>
   </div>
 </div>

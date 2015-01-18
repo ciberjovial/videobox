@@ -4,7 +4,7 @@ session_start();
 $user=strtoupper($_SESSION['usuario']);
 $idd=$_SESSION['codigo'];
 $add=$_GET['add'];
-
+$tipouser = $_SESSION['tipouser'];
 include("funciones.php");
 include("html.php"); 
 head();
@@ -20,11 +20,79 @@ mensaje("Bienvenido <b>INVITADO</b> al Sistema. | <b><a href=\"login.php\">Inici
 }
 else
 {
-    mensaje("Bienvenido <b>$user</b> al Sistema. | <b><a href=\"cerrar.php\">Cerrar Sesion</a></b> | <b><a href=\index.php\">Regresar al Inicio</a></b> | ID:$idd");
+   
+		mensaje("Bienvenido <b>$user</b> al Sistema. | <b><a href=\"cerrar.php\">Cerrar Sesion</a></b> | <b><a href=\"index.php\">Regresar al Inicio</a></b> | ID:$idd");	
+			
 }
 ?>	
 </center>
 <div class="box">
+<?php
+if ($tipouser == 2) {  // si el tipo de usuario es cajero
+	
+	conectar();
+		$consulta=mysql_query("SELECT id, cliente_id, empleado_id, fecha from pedido WHERE estado = 0")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+	?>	
+	
+    <table width="800" border="0" cellspacing="0">
+  <tr>
+    <th scope="col" colspan=4>Ventas vigentes</th> 
+  </tr>
+  <tr>
+    <th width="30" height="40" scope="col">Id</th>
+    <th width="220" height="40" scope="col">Cliente</th>
+    <th width="220" height="40" scope="col">Fecha</th>
+    <th width="40" height="40" scope="col">Importe</th>
+  </tr>
+  <?php
+  while ($r = mysql_fetch_assoc($consulta)) {
+  ?>	
+  <form action="vender.php" method="post"   name="enviarpedido" target="_self">
+  <tr>
+    <td><input name="enviar pedido" type="submit" value="<?php echo $r['id']; ?>" /></td>
+    <td><?php echo nombrecliente($r['cliente_id']); ?></td>
+    <td><?php echo $r['fecha']; ?></td>
+    <td>S/. <?php echo number_format(importeb($r['id']),2); ?></td>
+  </tr>
+      <?php
+		 echo "<input type=\"hidden\" name=\"idpedido\" value=" . $r['id'] . " />";
+		echo "<input type=\"hidden\" name=\"optx\" value=\"addpedido\" />";
+		 ?>
+  </form>
+  <?php
+  }
+  ?>	  
+</table>
+
+	<?php
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+} else {     // si el usuario no es cajero
+
+?>	
+
   <?
 conectar();
 $consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
@@ -56,6 +124,12 @@ while ($r = mysql_fetch_assoc($consulta)) {
   <?
    }
   ?>
+  
+<?php
+
+} // fin de condicion de tipo de usuario
+?>	  
+  
 </div>
 </div>
 </div>
