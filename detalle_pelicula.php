@@ -101,7 +101,7 @@ ob_start("ob_gzhandler");
 	  <?php
 		if(!isset($_SESSION['usuario']))
 	{
-		?>Para alquilar<br><b><a href=\"login.php\">Inicie Sesion</a></b>
+		?>Para alquilar<br><b><a href="login.php">Inicie Sesion</a></b>
 		<?
 	}
 	else
