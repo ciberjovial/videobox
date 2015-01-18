@@ -109,6 +109,7 @@ if ($tipouser == 2) {  // si el tipo de usuario es cajero
 conectar();
 if (isset($_GET['idgenero'])){
 	 
+	 
 	$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula where genero_id='".$_GET['idgenero']."'")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
 	
 	?>
