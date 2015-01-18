@@ -24,7 +24,9 @@ $r=mysql_fetch_array($data);
 		$_SESSION['usuario']=$usuario;//datos correctos -> logeamos =)
 		$_SESSION['codigo']=($r[0]);
 		$_SESSION['tipouser']=($r[1]);
-		//header("Location: index.php");
+		
+		$midate = date("Y-m-d H:i:s");
+		mysql_query("UPDATE usuario SET lastlogin='$midate' WHERE id='$r[0]'")or die("<b>ERROR#1. El servidor dijo: </b> " . mysql_error());
 		header("Location: index.php");
 		
 		}
