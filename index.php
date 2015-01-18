@@ -34,11 +34,11 @@ if ($tipouser == 2) {  // si el tipo de usuario es cajero
 		//echo $idpedido;
 		conectar();
 		if ($_POST[cerrarventa]) { 
-		    mysql_query("UPDATE pedido SET estado='1' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+		    mysql_query("UPDATE pedido SET estado='1', empleado_id='$idd' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
 		 }
 		 
 		if ($_POST[anulaventa]) { 
-		    mysql_query("UPDATE pedido SET estado='2' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+		    mysql_query("UPDATE pedido SET estado='2', empleado_id='$idd' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
 		 }		 
 		//mysql_query("UPDATE pedido SET estado='1' WHERE id='$idpedido'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
 	}
