@@ -69,10 +69,19 @@ else{
 	<div id="sidebar" >
 		<div class="sep">
        </div>
-        <h1>Promociones</h1>
+        <h1>Generos</h1>
         <div class="sidebox">
         <ul class="sidemenu">
 				<img src="css/lado.png" alt="" />
+                <?php
+                 conectar();
+                 $consulta=mysql_query("SELECT id,nombre FROM genero")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+                 while ($r = mysql_fetch_assoc($consulta)) {
+				 ?>
+                 <li><a href="index.php?idgenero=<?php echo $r['id'];?>">.                   <?php echo $r['nombre'];?></a></li>
+                <?php
+				 }
+				?>
         </div>
 		<br />
 				

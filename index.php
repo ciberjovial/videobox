@@ -107,7 +107,17 @@ if ($tipouser == 2) {  // si el tipo de usuario es cajero
 
   <?
 conectar();
-$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+if (isset($_GET['idgenero'])){
+	 
+	$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula where genero_id='".$_GET['idgenero']."'")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+	
+	?>
+    <h1><b><?php echo nombregenero($_GET['idgenero']); ?></b></h1>
+<?
+	} else {
+		$consulta=mysql_query("SELECT id, titulo, sinopsis, imagen from pelicula")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+		}
+
 ?>
 <?
 while ($r = mysql_fetch_assoc($consulta)) {
