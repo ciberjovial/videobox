@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="logo.png" server="C:/AppServ/www/prot3/" local="130658645367898591" remote="130658645360000000" />
-<file name="funciones.php" server="C:/AppServ/www/prot3/" local="130660281092771439" remote="130660281090000000" />
-<file name="html.php" server="C:/AppServ/www/prot3/" local="130660232756396756" remote="130660232750000000" />
-<file name="index.php" server="C:/AppServ/www/prot3/" local="130660138902468619" remote="130660138900000000" />
+<file name="funciones.php" server="C:/AppServ/www/prot3/" local="130660337359849732" remote="130660337350000000" />
+<file name="html.php" server="C:/AppServ/www/prot3/" local="130660479643128174" remote="130660479640000000" />
+<file name="index.php" server="C:/AppServ/www/prot3/" local="130660463925269164" remote="130660463920000000" />
 <file name="login.php" server="C:/AppServ/www/prot3/" local="130660138902478619" remote="130660138900000000" />
-<file name="comprar.php" server="C:/AppServ/www/prot3/" local="130660259056871057" remote="130660259050000000" />
-<file name="registro.php" server="C:/AppServ/www/prot3/" local="130659504036904924" remote="130659504030000000" />
+<file name="comprar.php" server="C:/AppServ/www/prot3/" local="130660338065200075" remote="130660338060000000" />
+<file name="registro.php" server="C:/AppServ/www/prot3/" local="130660461744354422" remote="130660461740000000" />
 <file name="verificar.php" server="C:/AppServ/www/prot3/" local="130660233274066365" remote="130660233270000000" />
 <file name="perfil.php" server="C:/AppServ/www/prot3/" local="130660138902618627" remote="130660138900000000" />
 <file name="vercesta.php" server="C:/AppServ/www/prot3/" local="130660138902628628" remote="130660138900000000" />
@@ -14,4 +14,6 @@
 <file name="vender.php" server="C:/AppServ/www/prot3/" local="130660284130000000" remote="130660284130000000" />
 <file name="detalle_pelicula.php" server="C:/AppServ/www/prot3/" local="130660138902418616" remote="130660138900000000" />
 <file name="rptventa.php" server="C:/AppServ/www/prot3/" local="130660350960000000" remote="130660350960000000" />
+<file name="usuarios.php" server="C:/AppServ/www/prot3/" local="130660439020000000" remote="130660439020000000" />
+<file name="cerrar.php" server="C:/AppServ/www/prot3/" local="130658645366338502" remote="130658645360000000" />
 </dwsync>

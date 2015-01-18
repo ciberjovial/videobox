@@ -32,7 +32,7 @@ for ($i=1;$i<=$n;$i++)
 <div class="box"> 
 		<h3> Venta</h3>
 		<blockquote>
-			<p>La compra se realizó con exito</p>
+			<p>La compra se realizó con exito de <?php echo $n; ?> articulos</p>
         </blockquote>
 <?
 conectar();

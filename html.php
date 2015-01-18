@@ -32,7 +32,11 @@ function head($estilo="estilo.css")
 	  <li id="current"><a href="index.php"> INICIO</a></li>
       <li><a href="rptventa.php"> Ver Reporte</a></li>
          <?php 
-		   } else {
+		   } elseif($tipouser == 3) {
+		 ?>
+	      <li id="current"><a href="index.php"> INICIO</a></li> 
+         <?php 			   
+			}else {
 			    ?>
                	  <li id="current"><a href="index.php"> INICIO</a></li>
       <li><a href="perfil.php"> Mi Perfil</a></li>

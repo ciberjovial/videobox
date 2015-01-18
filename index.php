@@ -78,6 +78,97 @@ if ($tipouser == 2) {  // si el tipo de usuario es cajero
 
 	<?php
 
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+} 
+elseif($tipouser == 3) {  //si fuera administrador
+	if ($_POST[insertuser]) { 
+	$nuser = $_POST["nuser"];
+	$idusuario = $_POST["idusuario"];
+	$nombreuser = $_POST["nombreuser"];
+	$apellidouser = $_POST["apellidouser"];
+	$passworduser = $_POST["passworduser"];
+	$emailuser =  $_POST["emailuser"];
+	conectar();
+	
+	if(!empty($nuser) && !empty($passworduser)) {
+			    mysql_query("INSERT INTO usuario (user, nombre, apellido,password,email,estado,tipo)
+VALUES ('$nuser', '$nombreuser', '$apellidouser','$passworduser','$emailuser','1','2')")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+	}
+	
+
+	
+	
+	}
+	
+	
+	
+	
+	if ($_POST[editaruser]) { 
+	$idusuario = $_POST["idusuario"];
+	$nombreuser = $_POST["nombreuser"];
+	$apellidouser = $_POST["apellidouser"];
+	$passworduser = $_POST["passworduser"];
+	$emailuser =  $_POST["emailuser"];
+	
+	conectar();
+	    mysql_query("UPDATE usuario SET nombre='$nombreuser', apellido='$apellidouser', email = '$emailuser', `password` = '$passworduser' WHERE id='$idusuario'")or die("<b>ERROR#2. El servidor dijo: </b> " . mysql_error());
+	}
+	
+	
+	?>	
+	<table width="800" border="0" cellspacing="4">
+  <tr align="center">
+    <th height="33" colspan="5" scope="col"><a href="usuarios.php?&optx=addd">Ingresar nuevo usuario</a></th> 
+  </tr>
+  <tr>
+    <th height="27" scope="col">Usuario</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellido</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Perfil</th>
+  </tr>
+  <?php
+  $estado = array('0'=>"Inactivo",'1'=>"Activo");
+  $perfil = array('0'=>"Administrador",'1'=>"Cliente",'2'=>"Cajero");
+  conectar();
+  $consulta=mysql_query("SELECT id,tipo,nombre,apellido,`user`,estado FROM usuario WHERE tipo != 1")or die("<b>Error1. El servidor dijo: </b> " . mysql_error());
+  
+  while ($r = mysql_fetch_assoc($consulta)) {
+  ?>	
+  <tr>
+    <td><a href="usuarios.php?&optx=edit&idusuario=<?php echo $r['id'];?>"><?php echo $r['user']; ?></a></td>
+    <td><?php echo $r['nombre']; ?></td>
+    <td><?php echo $r['apellido']; ?></td>
+    <td><?php echo ($estado[$r['estado']]); ?></td>
+    <td><?php echo $perfil[$r['tipo']]; ?></td>
+  </tr>
+   <?php
+  }
+   ?>	
+</table>
+
+	 <?php
+  
 	
 	
 	
@@ -101,7 +192,15 @@ if ($tipouser == 2) {  // si el tipo de usuario es cajero
 	
 	
 	
-} else {     // si el usuario no es cajero
+	
+	
+	
+	
+	
+	
+}
+
+else {     // si el usuario no es cajero
 
 ?>	
 
